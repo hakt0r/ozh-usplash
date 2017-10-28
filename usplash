@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ -n "$OZH_INSTALL" ] && {
+  mkdir -p $OZH/bin
+  ( cd $OZH/usplash
+    wget -O src.zip https://github.com/hakt0r/usplash/archive/master.zip
+    rm -rf usplash-master
+    unzip   src.zip
+    cd usplash-master
+    make usplash && cp usplash $OZH/bin/; ); }
